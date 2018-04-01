@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="login-container">
-      <h2 class="login-h2">欢迎登录</h2>
+      <h2 class="login-h2">欢迎注册</h2>
       <div class="login-form">
         <Form :model="formItem" ref="formItem" :rules="ruleItem" :label-width="80">
           <FormItem prop="phone" label="用户名：">
@@ -10,12 +10,11 @@
           <FormItem prop="password" label="密码：">
             <Input v-model="formItem.password" size="large" placeholder="请输入密码"></Input>
           </FormItem>
+          <div id="v_container" style="width: 100px;height: 40px;position: relative;top: -61px;left: 230px;">
+　　　　　　　<canvas id="verifyCanvas" width="100" height="40" style="cursor: pointer;"></canvas>
+　　　　　　</div>
           <Button type="info" @click="handleSubmit('formItem')" long>登录</Button>
         </Form>
-        <div class="login-foot">
-          <router-link to="/Register">欢迎注册</router-link>
-          <router-link to="/ForgetPwd">忘记密码</router-link>
-        </div>
       </div>
     </div>
   </div>
@@ -23,7 +22,7 @@
 
 <script>
 export default {
-  name: 'Login',
+  name: 'Register',
   data () {
     return {
       formItem: {
@@ -42,14 +41,7 @@ export default {
     }
   },
   methods: {
-    handleSubmit(name) {
-      this.$refs[name].validate((valid) => {
-        if (valid) {
-          this.$router.push({ name: 'Home' });
-        } else {
-        }
-      })
-    }
+
   }
 }
 </script>
@@ -90,10 +82,5 @@ export default {
   .login-form{
     border-top:1px solid #aaa;
     padding:20px 10px;
-  }
-  .login-foot{
-    margin:20px 0px;
-    display: flex;
-    justify-content: space-between;
   }
 </style>
