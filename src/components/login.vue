@@ -27,8 +27,8 @@ export default {
   data () {
     return {
       formItem: {
-        phone: '',
-        password: '',
+        phone: '18829788145',
+        password: '123456',
       },
       ruleItem: {
         phone: [
@@ -42,6 +42,7 @@ export default {
     }
   },
   methods: {
+    // 登录按钮
     handleSubmit(name) {
       this.$refs[name].validate((valid) => {
         if (valid) {

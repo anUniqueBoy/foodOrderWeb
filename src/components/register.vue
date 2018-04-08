@@ -10,10 +10,22 @@
           <FormItem prop="password" label="密码：">
             <Input v-model="formItem.password" size="large" placeholder="请输入密码"></Input>
           </FormItem>
-          <div id="v_container" style="width: 100px;height: 40px;position: relative;top: -61px;left: 230px;">
-　　　　　　　<canvas id="verifyCanvas" width="100" height="40" style="cursor: pointer;"></canvas>
-　　　　　　</div>
-          <Button type="info" @click="handleSubmit('formItem')" long>登录</Button>
+          <FormItem prop="code" label="验证码：">
+            <Row>
+              <Col span="8">
+                <Input v-model="formItem.code" placeholder="请输入验证码"></Input>
+                <u class="u-font" @click="changeCode">看不清，换一张</u>
+              </Col>
+              <Col span="16">
+                <div style="width:180px;height:70px;">
+                  <img v-if="codeNum === 1" src="../assets/yanzheng1.png" width="100%" height="100%" alt="">
+　　　　　　       <img v-if="codeNum === 2" src="../assets/yanzheng2.png" width="100%" height="100%" alt="">
+　　　　　　       <img v-if="codeNum === 3" src="../assets/yanzheng3.png" width="100%" height="100%" alt="">
+                </div>
+              </Col>
+            </Row>
+　　　　　 </FormItem>
+          <Button type="info" @click="handleSubmit('formItem')" long>注册</Button>
         </Form>
       </div>
     </div>
@@ -26,9 +38,11 @@ export default {
   data () {
     return {
       formItem: {
-        phone: '',
-        password: '',
+        phone: '18829788145',
+        password: '123456',
+        code: '',
       },
+      codeNum: 1,
       ruleItem: {
         phone: [
           { required: true, message: '请输入手机号', trigger: 'blur' }
@@ -41,7 +55,32 @@ export default {
     }
   },
   methods: {
-
+    // 注册按钮
+    handleSubmit(name) {
+      this.$refs[name].validate((valid) => {
+        if (valid) {
+          let lowCode = this.formItem.code.toLowerCase();
+          if (lowCode === '3n3d' || lowCode === '7wob' || lowCode === 'dwse') {
+            this.$router.push({ name: 'Home' });
+          } else if (lowCode === ''){
+            this.$Message.warning('请输入验证码');
+          } else {
+            this.$Message.warning('验证码输入错误，请重新输入');
+          }
+        } else {
+        }
+      })
+    },
+    // 点击切换验证码图片
+    changeCode () {
+      if (this.codeNum === 1) {
+        this.codeNum = 2
+      } else if (this.codeNum === 2) {
+        this.codeNum = 3
+      } else if (this.codeNum === 3) {
+        this.codeNum = 1
+      }
+    }
   }
 }
 </script>
@@ -82,5 +121,13 @@ export default {
   .login-form{
     border-top:1px solid #aaa;
     padding:20px 10px;
+  }
+  .u-font{
+    margin-top:10px;
+    display: inline-block;
+    color:#3879D9;
+  }
+  .u-font:hover{
+    cursor: pointer;
   }
 </style>
