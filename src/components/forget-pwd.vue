@@ -5,13 +5,13 @@
       <div class="login-form">
         <Form :model="formItem" ref="formItem" :rules="ruleItem" :label-width="80">
           <FormItem prop="phone" label="用户名：">
-            <Input v-model="formItem.phone" size="large" placeholder="请输入手机号"></Input>
+            <Input type="text" v-model="formItem.phone" size="large" placeholder="请输入手机号"></Input>
           </FormItem>
           <FormItem prop="password" label="旧密码：">
-            <Input v-model="formItem.password" size="large" placeholder="请输入密码"></Input>
+            <Input type="password" v-model="formItem.password" size="large" placeholder="请输入密码"></Input>
           </FormItem>
           <FormItem prop="newPassword" label="新密码：">
-            <Input v-model="formItem.newPassword" size="large" placeholder="请输入密码"></Input>
+            <Input type="password" v-model="formItem.newPassword" size="large" placeholder="请输入密码"></Input>
           </FormItem>
           <Button type="info" @click="handleSubmit('formItem')" long>确认</Button>
         </Form>
