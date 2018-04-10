@@ -6,6 +6,7 @@ import ForgetPwd from '@/components/forget-pwd'
 import Home from '@/components/home'
 import MyOrder from '@/components/my-order'
 import PersonalCenter from '@/components/personal-center'
+import Detail from '@/components/detail'
 
 Vue.use(Router)
 
@@ -58,6 +59,14 @@ export default new Router({
         title: '个人中心',
       },
       component: PersonalCenter
+    },
+    {
+      path: '/Detail',
+      name: 'Detail',
+      meta: {
+        title: '商品详情',
+      },
+      component: Detail
     },
   ]
 })

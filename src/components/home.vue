@@ -53,40 +53,99 @@
       </Row>
     </div>
     <div class="show-container">
-      <Row :gutter="16">
+      <Row :gutter="24">
         <Col span="6">
-          <div>
+          <div class="item" @click="jumpDetail">
             <div>
               <img class="img-size" src="../assets/timg.jpg" alt="">
             </div>
-            <p>千家粗粮王</p>
+            <div style="text-align:left">
+              <span class="font-span">￥20</span>
+              <p class="font-p">铁板培根饭</p>
+            </div>
           </div>
         </Col>
         <Col span="6">
-          <div>
+          <div class="item">
             <div>
               <img class="img-size" src="../assets/timg.jpg" alt="">
             </div>
-            <p>千家粗粮王</p>
+            <div style="text-align:left">
+              <span class="font-span">￥20</span>
+              <p class="font-p">铁板培根饭</p>
+            </div>
           </div>
         </Col>
         <Col span="6">
-          <div>
+          <div class="item">
             <div>
               <img class="img-size" src="../assets/timg.jpg" alt="">
             </div>
-            <p>千家粗粮王</p>
+            <div style="text-align:left">
+              <span class="font-span">￥20</span>
+              <p class="font-p">铁板培根饭</p>
+            </div>
           </div>
         </Col>
         <Col span="6">
-          <div>
+          <div class="item">
             <div>
               <img class="img-size" src="../assets/timg.jpg" alt="">
             </div>
-            <p>千家粗粮王</p>
+            <div style="text-align:left">
+              <span class="font-span">￥20</span>
+              <p class="font-p">铁板培根饭</p>
+            </div>
+          </div>
+        </Col>
+        <Col span="6">
+          <div class="item">
+            <div>
+              <img class="img-size" src="../assets/timg.jpg" alt="">
+            </div>
+            <div style="text-align:left">
+              <span class="font-span">￥20</span>
+              <p class="font-p">铁板培根饭</p>
+            </div>
+          </div>
+        </Col>
+        <Col span="6">
+          <div class="item">
+            <div>
+              <img class="img-size" src="../assets/timg.jpg" alt="">
+            </div>
+            <div style="text-align:left">
+              <span class="font-span">￥20</span>
+              <p class="font-p">铁板培根饭</p>
+            </div>
+          </div>
+        </Col>
+        <Col span="6">
+          <div class="item">
+            <div>
+              <img class="img-size" src="../assets/timg.jpg" alt="">
+            </div>
+            <div style="text-align:left">
+              <span class="font-span">￥20</span>
+              <p class="font-p">铁板培根饭</p>
+            </div>
+          </div>
+        </Col>
+        <Col span="6">
+          <div class="item">
+            <div>
+              <img class="img-size" src="../assets/timg.jpg" alt="">
+            </div>
+            <div style="text-align:left">
+              <span class="font-span">￥20</span>
+              <p class="font-p">铁板培根饭</p>
+            </div>
           </div>
         </Col>
       </Row>
+    </div>
+    <div class="footer">
+      <Page :total="100" show-total></Page>
     </div>
   </div>
 </template>
@@ -97,13 +156,18 @@ export default {
   data () {
     return {
       search: '',
-      value: 0
+      value: 0,
     }
+  },
+  mounted() {
   },
   methods: {
     jumpPeosonalCenter() {
       this.$router.push({ name: 'PersonalCenter' });
-    }
+    },
+    jumpDetail() {
+      this.$router.push({ name: 'Detail' });
+    },
   }
 }
 </script>
@@ -141,10 +205,10 @@ export default {
   .content{
     margin: 10px;
   }
-  ul {
+  .left-content {
     background-color: aqua;
   }
-  ul li{
+  .left-content li{
     list-style: none;
     font-size: 18px;
     padding: 5px;
@@ -166,10 +230,28 @@ export default {
   }
   .show-container{
     border-top:1px solid #ddd;
-    padding: 20px;
+    padding: 20px 20px 0;
   }
   .img-size{
-    width: 240px;
+    width: 100%;
     height: 150px;
+  }
+  .font-p{
+    font-size: 20px;
+    padding:0 10px;
+    display: inline;
+  }
+  .font-span{
+    padding:0 10px;
+    font-size:22px;
+    color: #e4393c;
+  }
+  .item {
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  .footer{
+    text-align: right;
+    margin: 0 20px 20px 20px;
   }
 </style>
