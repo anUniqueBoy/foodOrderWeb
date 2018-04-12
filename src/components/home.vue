@@ -7,9 +7,9 @@
       </div>
       <div class="header-people" @click="jumpPeosonalCenter">
         <div style="width:30px;height:30px;">
-          <img src="../assets/people.png" alt="" style="width:100%;height:100%;vertical-align:middle">
+          <img src="../assets/personCenter.png" alt="" style="width:100%;height:100%;vertical-align:middle">
         </div>
-        <p style="margin-left:5px">个人中心</p>
+        <p style="margin-left:5px;color:#fff">个人中心</p>
       </div>
     </div>
     <div class="content">
@@ -57,7 +57,51 @@
         <Col span="6">
           <div class="item" @click="jumpDetail">
             <div>
-              <img class="img-size" src="../assets/timg.jpg" alt="">
+              <img class="img-size" src="../assets/timg (2).jpg" alt="">
+            </div>
+            <div style="text-align:left">
+              <span class="font-span">￥20</span>
+              <p class="font-p">铁板培根饭</p>
+            </div>
+          </div>
+        </Col>
+        <Col span="6">
+          <div class="item">
+            <div>
+              <img class="img-size" src="../assets/timg (1).jpg" alt="">
+            </div>
+            <div style="text-align:left">
+              <span class="font-span">￥20</span>
+              <p class="font-p">铁板培根饭</p>
+            </div>
+          </div>
+        </Col>
+        <Col span="6">
+          <div class="item">
+            <div>
+              <img class="img-size" src="../assets/timg (3).jpg" alt="">
+            </div>
+            <div style="text-align:left">
+              <span class="font-span">￥20</span>
+              <p class="font-p">铁板培根饭</p>
+            </div>
+          </div>
+        </Col>
+        <Col span="6">
+          <div class="item">
+            <div>
+              <img class="img-size" src="../assets/timg (4).jpg" alt="">
+            </div>
+            <div style="text-align:left">
+              <span class="font-span">￥20</span>
+              <p class="font-p">铁板培根饭</p>
+            </div>
+          </div>
+        </Col>
+        <Col span="6">
+          <div class="item">
+            <div>
+              <img class="img-size" src="../assets/timg (1).jpg" alt="">
             </div>
             <div style="text-align:left">
               <span class="font-span">￥20</span>
@@ -79,7 +123,7 @@
         <Col span="6">
           <div class="item">
             <div>
-              <img class="img-size" src="../assets/timg.jpg" alt="">
+              <img class="img-size" src="../assets/timg (4).jpg" alt="">
             </div>
             <div style="text-align:left">
               <span class="font-span">￥20</span>
@@ -90,51 +134,7 @@
         <Col span="6">
           <div class="item">
             <div>
-              <img class="img-size" src="../assets/timg.jpg" alt="">
-            </div>
-            <div style="text-align:left">
-              <span class="font-span">￥20</span>
-              <p class="font-p">铁板培根饭</p>
-            </div>
-          </div>
-        </Col>
-        <Col span="6">
-          <div class="item">
-            <div>
-              <img class="img-size" src="../assets/timg.jpg" alt="">
-            </div>
-            <div style="text-align:left">
-              <span class="font-span">￥20</span>
-              <p class="font-p">铁板培根饭</p>
-            </div>
-          </div>
-        </Col>
-        <Col span="6">
-          <div class="item">
-            <div>
-              <img class="img-size" src="../assets/timg.jpg" alt="">
-            </div>
-            <div style="text-align:left">
-              <span class="font-span">￥20</span>
-              <p class="font-p">铁板培根饭</p>
-            </div>
-          </div>
-        </Col>
-        <Col span="6">
-          <div class="item">
-            <div>
-              <img class="img-size" src="../assets/timg.jpg" alt="">
-            </div>
-            <div style="text-align:left">
-              <span class="font-span">￥20</span>
-              <p class="font-p">铁板培根饭</p>
-            </div>
-          </div>
-        </Col>
-        <Col span="6">
-          <div class="item">
-            <div>
-              <img class="img-size" src="../assets/timg.jpg" alt="">
+              <img class="img-size" src="../assets/timg (3).jpg" alt="">
             </div>
             <div style="text-align:left">
               <span class="font-span">￥20</span>
@@ -185,7 +185,7 @@ export default {
     width: 100%;
     height: 60px;
     line-height: 60px;
-    background-color: azure;
+    background-color: #545051;
     /* background: url(../assets/bgheader3.png) no-repeat;
     background-size: 100% 100%; */
     display: flex;
@@ -206,19 +206,21 @@ export default {
     margin: 10px;
   }
   .left-content {
-    background-color: aqua;
+    background:transparent;
+    background-color: #174369;
+    color: #fff;
+    opacity: 0.8;
   }
   .left-content li{
     list-style: none;
     font-size: 18px;
     padding: 5px;
-    border: 1px solid #ddd;
     border-bottom: none;
   }
   ul li:hover{
     cursor: pointer;
-    /* background-color: blue; */
-    border-right: none;
+    background-color: #fff;
+    color: #545051;
   }
   .left-content{
     border-bottom: 1px solid #ddd;
